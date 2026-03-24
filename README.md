@@ -9,7 +9,7 @@
 
  Requirements:
    - Webcam
-   - OpenCV(pip install opencv-contrib-python
+   - OpenCV
    - Numpy
    - Python 3.x
 
