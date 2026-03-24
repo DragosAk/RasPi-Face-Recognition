@@ -21,7 +21,7 @@ if os.path.exists(filename):
         names = json.load(f)
     print("Current list in JSON:")
     for index, item in enumerate(names):
-        print(f"{index}: {item}")
+        print(f"{index }: {item}")
 entry_log = {}
 
 cam = cv2.VideoCapture(0, cv2.CAP_V4L2)
@@ -38,9 +38,9 @@ try:
 
         for(x,y,w,h) in faces:
             id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
-
+            id -= 1
             # Lower confidence == better accuracy
-            if (confidence < 75):
+            if (confidence < 50):
                 name = names[id]
                 if id not in entry_log:
                     entry_log[id] = time.time()

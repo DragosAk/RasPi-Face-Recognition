@@ -20,7 +20,7 @@ def getImagesAndLabels(path):
                     PIL_img = Image.open(image_path).convert('L')
                     img_numpy = np.array(PIL_img, 'uint8')
                     user_id = int(file.split(".")[1])
-		    faces = detector.detectMultiScale(img_numpy)
+                    faces = detector.detectMultiScale(img_numpy)
                     for (x, y, w, h) in faces:
                         faceSamples.append(img_numpy[y:y+h, x:x+w])
                         ids.append(user_id)
